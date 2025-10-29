@@ -5,9 +5,9 @@ import Footer from './Footer';
 export default function App() {
   return (
     <>
-      <Header title="Мій перший React-додаток" />
+      <Header />
       <Main />
-      <Footer year={2025} />
+      <Footer />
     </>
   );
 }

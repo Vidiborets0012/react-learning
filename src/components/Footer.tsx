@@ -1,11 +1,7 @@
-type FooterProps = {
-  year: number;
-};
-
-export default function Footer({ year }: FooterProps) {
+export default function Footer() {
   return (
     <footer>
-      <p>© {year} React Course</p>
+      <p>© 2025 My React App</p>
     </footer>
   );
 }

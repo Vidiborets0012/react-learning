@@ -1,11 +1,7 @@
-type HeaderProps = {
-  title: string;
-};
-
-export default function Header({ title }: HeaderProps) {
+export default function Header() {
   return (
     <header>
-      <h1>{title}</h1>
+      <h1>My React Learning Project</h1>
     </header>
   );
 }
