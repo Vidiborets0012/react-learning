@@ -4,10 +4,10 @@ import Footer from './Footer';
 
 export default function App() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <Header username="Віктор" />
-      <Main />
-      <Footer />
-    </div>
+    <>
+      <Header title="Мій перший React-додаток" />
+      <Main content="Це головний розділ сторінки" />
+      <Footer year={2025} />
+    </>
   );
 }

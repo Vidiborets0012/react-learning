@@ -1,7 +1,11 @@
-interface HeaderProps {
-  username: string;
-}
+type HeaderProps = {
+  title: string;
+};
 
-export default function Header({ username }: HeaderProps) {
-  return <h1>Привіт, {username}!</h1>;
+export default function Header({ title }: HeaderProps) {
+  return (
+    <header>
+      <h1>{title}</h1>
+    </header>
+  );
 }

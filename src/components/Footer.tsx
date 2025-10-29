@@ -1,4 +1,11 @@
-export default function Footer() {
-  const year = new Date().getFullYear();
-  return <footer>© {year} React Learning</footer>;
+type FooterProps = {
+  year: number;
+};
+
+export default function Footer({ year }: FooterProps) {
+  return (
+    <footer>
+      <p>© {year} React Course</p>
+    </footer>
+  );
 }
