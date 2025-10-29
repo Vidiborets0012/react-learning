@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <Header title="Мій перший React-додаток" />
-      <Main content="Це головний розділ сторінки" />
+      <Main />
       <Footer year={2025} />
     </>
   );
