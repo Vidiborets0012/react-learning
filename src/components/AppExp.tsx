@@ -5,6 +5,7 @@ import UserCard from './experiments/UserCard';
 import UserProfile from './UserProfile';
 import SocialApp from './social/SocialApp';
 import ReactionCounter from './ReactionCounter/ReactionCounter';
+import BookList from './Books/BookList';
 
 export default function AppExp() {
   return (
@@ -24,6 +25,7 @@ export default function AppExp() {
 
       <SocialApp />
       <ReactionCounter />
+      <BookList />
     </>
   );
 }
