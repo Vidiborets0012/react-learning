@@ -1,0 +1,43 @@
+.reaction-counter {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.reaction-button {
+  color: dodgerblue;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.reaction-button:hover {
+  background: #e5e7eb;
+}
+
+.reset-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.reset-button:hover {
+  background-color: #dc2626;
+}
+
+.reaction-count {
+  margin-left: 4px;
+  font-weight: 600;
+}

@@ -4,6 +4,7 @@ import PropsStateDemo from './experiments/PropsStateDemo';
 import UserCard from './experiments/UserCard';
 import UserProfile from './UserProfile';
 import SocialApp from './social/SocialApp';
+import ReactionCounter from './ReactionCounter/ReactionCounter';
 
 export default function AppExp() {
   return (
@@ -22,6 +23,7 @@ export default function AppExp() {
       />
 
       <SocialApp />
+      <ReactionCounter />
     </>
   );
 }
