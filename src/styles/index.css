@@ -52,3 +52,17 @@ section:not:last-child {
   margin-bottom: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+button {
+  padding-inline: 10px;
+  min-width: 40px;
+  height: 40px;
+  background-color: blue;
+  cursor: pointer;
+}
+
+.demo {
+  padding: '1rem';
+  border-radius: '8px';
+  text-align: 'center';
+}
