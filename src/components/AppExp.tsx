@@ -3,6 +3,7 @@ import Counter from './experiments/Counter';
 import PropsStateDemo from './experiments/PropsStateDemo';
 import UserCard from './experiments/UserCard';
 import UserProfile from './UserProfile';
+import SocialApp from './social/SocialApp';
 
 export default function AppExp() {
   return (
@@ -19,6 +20,8 @@ export default function AppExp() {
         email="some_name@example.com"
         avatar="https://i.pravatar.cc/150?img=12"
       />
+
+      <SocialApp />
     </>
   );
 }
