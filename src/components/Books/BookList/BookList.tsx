@@ -1,17 +1,8 @@
 import { useState } from 'react';
 import BookItem from '../BookItem/BookItem';
-import type { Book } from '../../../types/book';
-import css from './BookList.module.css';
+import styles from './BookList.module.css';
 
-// type Book = {
-//   id: number;
-//   title: string;
-//   author: string;
-//   year: number;
-//   likes: number;
-// };
-
-const initialBooks: Book[] = [
+const initialBooks = [
   {
     id: 1,
     title: 'The Great Gatsby',
@@ -30,49 +21,30 @@ const initialBooks: Book[] = [
 ];
 
 export default function BookList() {
-  const [books, setBooks] = useState<Book[]>(initialBooks);
+  const [books] = useState(initialBooks);
 
-  const handleLike = (id: number) => {
-    setBooks(prev =>
-      prev.map(book =>
-        book.id === id ? { ...book, likes: book.likes + 1 } : book
-      )
-    );
-  };
-
-  const handleReset = () => {
-    setBooks(prev => prev.map(book => ({ ...book, likes: 0 })));
+  const handleGlobalReset = () => {
+    // (опціонально) якщо буде глобальний reset для всіх книжок
+    console.log('🔄 Global reset pressed');
   };
 
   return (
-    <section className={css.container}>
-      <div className={css.header}>
-        <h2 className={css.title}>📚 Список книжок</h2>
+    <div className={styles.listContainer}>
+      <div className={styles.header}>
+        <h2>📚 Список книжок</h2>
         <button
-          className={css.resetBtn}
-          onClick={handleReset}
-          disabled={books.every(b => b.likes === 0)}
+          className={`${styles.resetButton} ${styles.global}`}
+          onClick={handleGlobalReset}
         >
-          🔄 Reset ❤️
+          Reset 💗
         </button>
       </div>
-      <ul className={css.list}>
-        {books.length === 0 ? (
-          <p className={css.empty}>No books available</p>
-        ) : (
-          books.map(book => (
-            <BookItem
-              key={book.id}
-              id={book.id}
-              title={book.title}
-              author={book.author}
-              year={book.year}
-              likes={book.likes}
-              onLike={() => handleLike(book.id)}
-            />
-          ))
-        )}
-      </ul>
-    </section>
+
+      <div className={styles.list}>
+        {books.map(book => (
+          <BookItem key={book.id} book={book} />
+        ))}
+      </div>
+    </div>
   );
 }

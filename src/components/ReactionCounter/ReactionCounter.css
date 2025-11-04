@@ -1,43 +1,30 @@
-.reaction-counter {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
 .reaction-button {
-  color: dodgerblue;
-  background: #f3f4f6;
-  border: 1px solid #d1d5db;
+  background-color: #e3f2fd;
+  border: 2px solid #90caf9;
   border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 1.2rem;
+  padding: 6px 10px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #1565c0;
+  font-weight: 600;
 }
 
 .reaction-button:hover {
-  background: #e5e7eb;
-}
-
-.reset-button {
-  background-color: #ef4444;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-
-.reset-button:hover {
-  background-color: #dc2626;
+  background-color: #bbdefb;
+  border-color: #42a5f5;
+  transform: translateY(-1px);
 }
 
 .reaction-count {
-  margin-left: 4px;
-  font-weight: 600;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 2px 6px;
+  color: #0d47a1;
+  font-size: 0.9rem;
+  min-width: 20px;
+  text-align: center;
 }

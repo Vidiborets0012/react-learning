@@ -1,40 +1,23 @@
 import type { Book } from '../../../types/book';
-import css from './BookItem.module.css';
+import BookReactions from '../BookReactions/BookReactions';
+import styles from './BookItem.module.css';
 
-export type BookItemProps = Book & {
-  // id?: string;
-  // title: string;
-  // author: string;
-  // year: number;
-  // likes: number;
-  onLike: () => void;
+export type BookItemProps = {
+  book: Book;
 };
 
-export default function BookItem({
-  title,
-  author,
-  year,
-  likes,
-  onLike,
-}: BookItemProps) {
+export default function BookItem({ book }: BookItemProps) {
   return (
-    <li className={css.item}>
-      <div className={css.content}>
-        <div className={css.meta}>
-          <h3>{title}</h3>
-          <p>by {author}</p>
-        </div>
-        <div className={css.controls}>
-          <span className={css.year}>{year}</span>
-          <button
-            className={css.likeBtn}
-            onClick={onLike}
-            aria-label={`Like ${title}`}
-          >
-            ❤️ <span className={css.likeCount}>{likes}</span>{' '}
-          </button>
-        </div>
+    <div className={styles.bookCard}>
+      <div className={styles.info}>
+        <h3 className={styles.title}>{book.title}</h3>
+        <p className={styles.author}>Автор: {book.author}</p>
+        <p className={styles.year}>Рік видання: {book.year}</p>
       </div>
-    </li>
+
+      <div className={styles.reactions}>
+        <BookReactions />
+      </div>
+    </div>
   );
 }

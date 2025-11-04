@@ -1,4 +1,4 @@
-import styles from './BookReaction.module.css';
+import styles from './ReactionButton.module.css';
 
 type ReactionButtonProps = {
   emoji: string;
@@ -13,7 +13,7 @@ export default function ReactionButton({
 }: ReactionButtonProps) {
   return (
     <button className={styles.reactionBtn} onClick={onClick}>
-      {emoji} ❤️ <span>{count}</span>
+      {emoji} ❤️ <span className={styles.count}>{count}</span>
     </button>
   );
 }

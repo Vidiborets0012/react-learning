@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ReactionButton from './ReactionButton';
-import styles from './BookReaction.module.css';
+import ReactionButton from '../ReactionButton/ReactionButton';
+import styles from './BookReactions.module.css';
 
 export default function BookReaction() {
   const [likes, setLikes] = useState(0);
