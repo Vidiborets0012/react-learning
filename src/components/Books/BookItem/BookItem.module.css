@@ -1,0 +1,72 @@
+.item {
+  list-style: none;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(13, 18, 26, 0.06);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.author {
+  margin: 0;
+  color: #52525b;
+  font-size: 0.9rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.year {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.likeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.likeBtn:hover {
+  background: #1e40af;
+}
+
+.likesCount {
+  font-weight: 700;
+}
