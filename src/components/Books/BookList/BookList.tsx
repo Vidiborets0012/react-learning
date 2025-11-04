@@ -22,10 +22,11 @@ const initialBooks = [
 
 export default function BookList() {
   const [books] = useState(initialBooks);
+  const [globalResetTrigger, setGlobalResetTrigger] = useState(0);
 
   const handleGlobalReset = () => {
-    // (опціонально) якщо буде глобальний reset для всіх книжок
-    console.log('🔄 Global reset pressed');
+    setGlobalResetTrigger(prev => prev + 1); // оновлюємо тригер
+    console.log('🔄 Global reset triggered');
   };
 
   return (
@@ -42,7 +43,11 @@ export default function BookList() {
 
       <div className={styles.list}>
         {books.map(book => (
-          <BookItem key={book.id} book={book} />
+          <BookItem
+            key={book.id}
+            book={book}
+            globalResetTrigger={globalResetTrigger}
+          />
         ))}
       </div>
     </div>

@@ -4,9 +4,10 @@ import styles from './BookItem.module.css';
 
 export type BookItemProps = {
   book: Book;
+  globalResetTrigger: number;
 };
 
-export default function BookItem({ book }: BookItemProps) {
+export default function BookItem({ book, globalResetTrigger }: BookItemProps) {
   return (
     <div className={styles.bookCard}>
       <div className={styles.info}>
@@ -16,7 +17,7 @@ export default function BookItem({ book }: BookItemProps) {
       </div>
 
       <div className={styles.reactions}>
-        <BookReactions />
+        <BookReactions globalResetTrigger={globalResetTrigger} />
       </div>
     </div>
   );

@@ -1,38 +1,50 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactionButton from '../ReactionButton/ReactionButton';
+import type { ReactionType } from '../../../types/book';
 import styles from './BookReactions.module.css';
 
-export default function BookReaction() {
-  const [likes, setLikes] = useState(0);
-  const [hearts, setHearts] = useState(0);
-  const [laughs, setLaughs] = useState(0);
+type BookReactionsProps = {
+  globalResetTrigger?: number; // оновлюється при глобальному reset
+};
 
-  const resetAll = () => {
-    setLikes(0);
-    setHearts(0);
-    setLaughs(0);
+export default function BookReactions({
+  globalResetTrigger,
+}: BookReactionsProps) {
+  const [reactions, setReactions] = useState({
+    like: 0,
+    love: 0,
+    dislike: 0,
+  });
+
+  // Скидання реакцій при глобальному reset
+  useEffect(() => {
+    if (globalResetTrigger !== undefined) {
+      setReactions({ like: 0, love: 0, dislike: 0 });
+    }
+  }, [globalResetTrigger]);
+
+  // Локальне оновлення лічильників
+  const handleReaction = (type: ReactionType) => {
+    setReactions(prev => ({ ...prev, [type]: prev[type] + 1 }));
   };
 
   return (
     <div className={styles.reactionsContainer}>
       <ReactionButton
         emoji="👍"
-        count={likes}
-        onClick={() => setLikes(l => l + 1)}
+        count={reactions.like}
+        onClick={() => handleReaction('like')}
       />
       <ReactionButton
         emoji="❤️"
-        count={hearts}
-        onClick={() => setHearts(h => h + 1)}
+        count={reactions.love}
+        onClick={() => handleReaction('love')}
       />
       <ReactionButton
-        emoji="😂"
-        count={laughs}
-        onClick={() => setLaughs(l => l + 1)}
+        emoji="👎"
+        count={reactions.dislike}
+        onClick={() => handleReaction('dislike')}
       />
-      <button className={styles.resetBtn} onClick={resetAll}>
-        Reset
-      </button>
     </div>
   );
 }
